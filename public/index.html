@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Web Applications: Week 3</title>
+  <script src="./main.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+  <main>
+    <div class="container" id="container-left">
+      <h1>Add user</h1>
+      <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <button type="submit">Add user</button>
+      </form> 
+    </div>
+    <div class="container" id="container-right">
+      <h1 id="header-right">Registered users:</h1>
+      <ul id="userList"></ul>
+      <button id="getUsers">Refresh</button>
+    </div>
+  </main>
+</body>
+</html>
