@@ -1,19 +1,17 @@
 document.getElementById('userForm').addEventListener('submit', async (event) => {
   event.preventDefault();
-  
   // Get form data
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
-
-  // Send POST request to /users endpoint
+  // Send POST request
   const response = await fetch('/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email })
   });
-
+  // Parse result
   const result = await response.json();
-  document.getElementById('responseMessage').textContent = result.message;
+  // document.getElementById('responseMessage').textContent = result.message;
 });
 
 // Display registered users when "Get Users" -button is clicled

@@ -13,4 +13,4 @@ app.use('/', router)
 // Serve static files from 'public'
 app.use(express.static(path.join(__dirname, '../public')))
 
-export default app
+export default app;
