@@ -13,4 +13,14 @@ app.use('/', router)
 // Serve static files from 'public'
 app.use(express.static(path.join(__dirname, '../public')))
 
-export default app;
+// Type for users
+type TUser = {
+  name: string; 
+  email: string; 
+}
+
+// List for storing users
+const users: TUser[] = [];
+
+export default app; 
+export { TUser, users }; 

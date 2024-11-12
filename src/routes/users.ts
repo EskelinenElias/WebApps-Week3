@@ -1,15 +1,8 @@
 import { Router, Request, Response } from 'express';
+import { TUser, users } from "../app"
 
 const router = Router();
 
-// Type for users
-type TUser = {
-  name: string; 
-  email: string; 
-}
-
-// List for storing users
-const users: TUser[] = [];
 
 // POST route to add new user
 router.post('/users', (req: Request, res: Response) => {
