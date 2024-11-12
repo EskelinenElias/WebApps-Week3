@@ -8,3 +8,12 @@ const port: number = 3000
 app.listen(port, () => { 
   console.log(`Server running at http://${host}:${port}/`)
 })
+
+// Type for users
+type TUser = {
+  name: string; 
+  email: string; 
+}
+
+// List for storing users
+const users: TUser[] = [];

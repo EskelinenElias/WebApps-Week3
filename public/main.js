@@ -37,7 +37,7 @@ document.getElementById('getUsers').addEventListener('click', async () => {
   // Add each user to the list
   users.forEach(user => {
     const listItem = document.createElement('li');
-    listItem.textContent = `${user.name} - ${user.email}`;
+    listItem.textContent = `${user.name} – ${user.email}`;
     userList.appendChild(listItem);
   });
 });

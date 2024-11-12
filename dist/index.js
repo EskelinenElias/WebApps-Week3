@@ -11,3 +11,5 @@ const port = 3000;
 app_1.default.listen(port, () => {
     console.log(`Server running at http://${host}:${port}/`);
 });
+// List for storing users
+const users = [];
