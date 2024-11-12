@@ -2,11 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const router = (0, express_1.Router)();
-// Add route for id echoing
-router.get('/echo/:id', (req, res) => {
-    const { id } = req.params;
+// GET route to get a greeting
+router.get('/hello', (req, res) => {
     res.json({
-        id: id
+        msg: "Hello world!"
     });
 });
 exports.default = router;

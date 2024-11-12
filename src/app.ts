@@ -3,7 +3,6 @@ import path from "path"
 import router from "./routes"
 import morgan from "morgan"
 
-
 const app: Express = express()
 
 // Add middleware

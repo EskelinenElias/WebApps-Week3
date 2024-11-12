@@ -20,7 +20,7 @@ router.post('/users', (req: Request, res: Response) => {
 // GET route to fetch all users
 router.get('/users', (req: Request, res: Response) => {
   // Send the response
-  res.status(201).json({ users });
+  res.status(201).json({ users: users });
 });
 
 export default router; 
