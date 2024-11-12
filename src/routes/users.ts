@@ -9,11 +9,14 @@ router.post('/users', (req: Request, res: Response) => {
   // Parse the request
   const name = req.body.name;
   const email = req.body.email;
+  console.log(name, email)
   // Create new user and add to the list
   const newUser: TUser = { name, email };
   users.push(newUser);
   // Send the response
-  res.json({ message: 'User successfully added' });
+  res.json({ message: 'User successfully added',
+    user: newUser
+  });
 });
 
 // GET route to fetch all users
