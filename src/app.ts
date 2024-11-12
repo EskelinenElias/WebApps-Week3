@@ -1,11 +1,14 @@
 import express, {Express, Request, Response} from "express"
 import path from "path"
 import router from "./routes"
+import morgan from "morgan"
+
 
 const app: Express = express()
 
 // Add middleware
 app.use(express.json())
+app.use(morgan("dev"))
 
 // Add routes
 app.use('/', router)
