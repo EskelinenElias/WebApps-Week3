@@ -23,12 +23,13 @@ async function getUsers() {
   // Parse response 
   const data = await response.json(); 
   // Check that the data is intact
-  if (!data || !data.users) {
+  if (!data || !data.users) {
     console.error("Failed to parse user data");
     return;
   }
-  // Return registered users
-  const users = data.users;
+  // Get registered users
+  const users = data.users; 
+  console.log(users)
   return users; 
 }
 

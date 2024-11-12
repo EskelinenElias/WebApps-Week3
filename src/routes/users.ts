@@ -3,13 +3,11 @@ import { TUser, users } from "../app"
 
 const router = Router();
 
-
 // POST route to add new user
 router.post('/users', (req: Request, res: Response) => {
   // Parse the request
   const name = req.body.name;
   const email = req.body.email;
-  console.log(name, email)
   // Create new user and add to the list
   const newUser: TUser = { name, email };
   users.push(newUser);
@@ -22,7 +20,7 @@ router.post('/users', (req: Request, res: Response) => {
 // GET route to fetch all users
 router.get('/users', (req: Request, res: Response) => {
   // Send the response
-  res.status(201).json({ users: users });
+  res.status(201).json({ users });
 });
 
 export default router; 
