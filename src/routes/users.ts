@@ -6,8 +6,12 @@ const router = Router();
 // POST route to add new user
 router.post('/users', (req: Request, res: Response) => {
   // Parse the request
-  const name = req.body.name;
-  const email = req.body.email;
+  if (!req.body.name || !req.body.email) { 
+    res.status(400).json({ message: "Could not add user." }); 
+    return; 
+  }
+  const name = req.body.name; 
+  const email = req.body.email; 
   // Create new user and add to the list
   const newUser: TUser = { name, email };
   users.push(newUser);

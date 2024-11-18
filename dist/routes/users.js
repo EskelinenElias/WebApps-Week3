@@ -6,6 +6,10 @@ const router = (0, express_1.Router)();
 // POST route to add new user
 router.post('/users', (req, res) => {
     // Parse the request
+    if (!req.body.name || !req.body.email) {
+        res.status(400).json({ message: "Could not add user." });
+        return;
+    }
     const name = req.body.name;
     const email = req.body.email;
     // Create new user and add to the list
