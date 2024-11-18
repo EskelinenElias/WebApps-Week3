@@ -1,5 +1,9 @@
 // Function to register a new user
 async function addUser(name, email) {
+  if (!name || !email) {
+    console.error(`Could not add user with name ${name} and email ${email}`); 
+    return; 
+  }
   // Send POST request
   const response = await fetch('/users', {
     method: 'POST',
@@ -23,7 +27,7 @@ async function getUsers() {
   // Parse response 
   const data = await response.json(); 
   // Check that the data is intact
-  if (!data || !data.users) {
+  if (!data || !data.users) {
     console.error("Failed to parse user data");
     return;
   }
@@ -62,7 +66,7 @@ document.getElementById('userForm').addEventListener('submit', async (event) => 
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   // Send POST request
-  const result = await addUser(name, email); 
+  await addUser(name, email); 
   // Refresh registered users list
   refreshUserList(); 
 });

@@ -16,9 +16,7 @@ router.post('/users', (req, res) => {
     const newUser = { name, email };
     app_1.users.push(newUser);
     // Send the response
-    res.json({ message: 'User successfully added',
-        user: newUser
-    });
+    res.json({ message: 'User successfully added' });
 });
 // GET route to fetch all users
 router.get('/users', (req, res) => {
